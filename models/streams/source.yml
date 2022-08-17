@@ -8,10 +8,28 @@ sources:
         description: >
           This table include all data from the Jira users.
         columns:
-          - name: accountId
+          - name: id_account
             description: Primary key of the users table
             tests:
               - unique
               - not_null
+          - name: display_name
+            description: The name of user
+          - name: email
+            description: Email address of the user
+          - name: airbyte_emitted_at
+            description: The moment of data was appended
       - name: workflows
         description: This table include all data from the Jira workflows.
+        columns:
+          - name: id_entity
+            description: Primary key of the workflows table
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: The name of workflow
+          - name: description
+            description: The description of workflow
+          - name: airbyte_emitted_at
+            description: The moment of data was appended
